@@ -18,7 +18,7 @@ async def get_posts(
     skip: int = 0,
     limit: int = 10,
     db: Session = Depends(get_db),
-    current_user: schemas.UserOut = Depends(oauth2.get_current_user),
+    # current_user: schemas.UserOut = Depends(oauth2.get_current_user),
 ):
     posts = (
         db.query(models.Post, func.count(models.Vote.post_id).label("votes"))
